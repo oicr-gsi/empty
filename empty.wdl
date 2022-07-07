@@ -10,7 +10,7 @@ workflow empty {
     n: "Number of lines to log"
   }
   call log as callLog {
-    inputs:
+    input:
       fileOut = stderr(),
       exitCode = exitCode,
       n = n
