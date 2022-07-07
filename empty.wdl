@@ -2,9 +2,8 @@ version 1.0
 
 workflow empty {
   input {
-    Int exitCode = 1
+    Int exitCode = 0
     Int n = 10
-    String outputFilePrefix = ".txt"
   }
   parameter_meta {
     exitCode: "Exit code"
