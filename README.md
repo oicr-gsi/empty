@@ -20,12 +20,12 @@ java -jar cromwell.jar run empty --inputs inputs.json
 #### Required Workflow Parameters:
 Parameter | Type | Description
 ---|--|---
-'fileIn' | File? | File from which to log lines
+'exitCode' | Int | Code to fail the workflow as needed
+'n' | Int | Number of lines to log
 
 ### Outputs
 Output | Type | Description
 ---|--|---
-'fileOut' | File? | Description
+'out' | Array[String] | Tail of stderr (with n lines)
 
 ### Commands
-This section lists command(s) run by empty workflow.
