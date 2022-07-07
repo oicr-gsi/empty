@@ -4,6 +4,7 @@ workflow empty {
   input {
     Int exitCode = 1
     Int n = 10
+    String outputFilePrefix = ".txt"
   }
   parameter_meta {
     exitCode: "Exit code"
@@ -32,23 +33,24 @@ task log {
     Int exitCode
     Int n
     Int mem = 1
-    String modules = ""
     Int timeout = 1
   }
-  command {
+  command <<<
   # Log n number of lines from fileOut (stderr)
-    tail -n ${n} ${fileOut}
+    tail -n ${n} ${fileOut} >&2
     exit ~{exitCode}
-  }
+  >>>
   runtime {
     memory: "~{mem} GB"
-    modules: "~{modules}"
     timeout: "~{timeout}"
   }
   output {
-    Array[String] lines = read_lines(stdout())
+    Array[String] lines = read_lines(stderr())
   }
   parameter_meta {
+    fileOut: "Stream from which lines will be logged"
+    exitCode: "Integer used to fail as appropriate"
+    n: "Number of lines to log from fileOut"
     mem: "Memory (in GB) to allocate to the job"
     modules: "Environment module name and version to load (space separated) before command execution"
     timeout: "Maximum amount of time (in hours) the task can run for"
