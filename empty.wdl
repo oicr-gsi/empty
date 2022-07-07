@@ -11,7 +11,7 @@ workflow empty {
   }
   call log as callLog {
     inputs:
-      fileOut = stderr()
+      fileOut = stderr(),
       exitCode = exitCode,
       n = n
   }
