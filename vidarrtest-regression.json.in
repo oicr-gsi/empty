@@ -1,23 +1,6 @@
 [
   {
-    "arguments": {
-      "empty.inputGroups": [
-        {
-          "empty": {
-            "contents": {
-              "configuration": "/.mounts/labs/gsi/testdata/empty/input_data/empty.config.gz",
-              "externalIds": [
-                {
-                  "id": "TEST",
-                  "provider": "TEST"
-                }
-              ]
-            },
-            "type": "EXTERNAL"
-          }
-        }
-      ]
-    },
+    "arguments": {},
     "description": "Log the default number of lines (10) and default exit (code=0)",
     "engineArguments": {},
     "id": "TEST_EMPTY",
@@ -31,6 +14,12 @@
         "type": "ALL"
       }
     },
-    "validators": []
+    "validators": [
+      {
+        "metrics_calculate": "@CHECKOUT@/calculate.sh",
+        "metrics_compare": "@CHECKOUT@/compare.sh",
+        "type": "script
+      }
+    ]
   }
 ]
