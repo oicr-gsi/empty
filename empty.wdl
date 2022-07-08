@@ -17,7 +17,6 @@ workflow empty {
       n = n
   }
   output {
-    Array[String] out = callLog.lines
   }
   meta {
     author: "Jenniffer Meng"
