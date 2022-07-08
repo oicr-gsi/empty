@@ -18,7 +18,7 @@
       {
         "metrics_calculate": "@CHECKOUT@/calculate.sh",
         "metrics_compare": "@CHECKOUT@/compare.sh",
-        "type": "script
+        "type": "script"
       }
     ]
   }
