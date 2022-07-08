@@ -23,6 +23,7 @@ workflow empty {
     author: "Jenniffer Meng"
     email: "jenniffer.meng@oicr.on.ca"
     description: "Workflow for testing infrastructure"
+    dependencies: []
   }
 }
 
@@ -42,7 +43,7 @@ task log {
     Int timeout = 1
   }
   command <<<
-  # Log n number of lines from file (stderr)
+    # Log n number of lines from file (stderr)
     tail -n ${n} ${file} >&2
     exit ~{exitCode}
   >>>
