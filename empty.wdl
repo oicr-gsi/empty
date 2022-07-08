@@ -11,7 +11,6 @@ workflow empty {
   }
   call log as callLog {
     input:
-      fileOut = stderr(),
       exitCode = exitCode,
       n = n
   }
@@ -28,7 +27,7 @@ workflow empty {
 
 task log {
   input {
-    File fileOut
+    File fileOut = stderr()
     Int exitCode
     Int n
     Int mem = 1
