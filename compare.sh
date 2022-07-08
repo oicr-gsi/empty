@@ -4,4 +4,4 @@ set -o errexit
 set -o pipefail
 
 # exit immediately
-exit 0
+echo 1
