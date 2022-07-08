@@ -12,7 +12,7 @@ workflow empty {
   call getStderr
   call log as callLog {
     input:
-      file = getStderr.err
+      file = getStderr.err,
       exitCode = exitCode,
       n = n
   }
@@ -35,7 +35,7 @@ task getStderr {
 
 task log {
   input {
-    File file = stderr()
+    File file
     Int exitCode
     Int n
     Int mem = 1
