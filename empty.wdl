@@ -16,13 +16,10 @@ workflow empty {
       exitCode = exitCode,
       n = n
   }
-  output {
-  }
   meta {
     author: "Jenniffer Meng"
     email: "jenniffer.meng@oicr.on.ca"
     description: "Workflow for testing infrastructure"
-    dependencies: []
   }
 }
 
