@@ -9,8 +9,10 @@ workflow empty {
     exitCode: "Exit code"
     n: "Number of lines to log"
   }
+  call getStderr
   call log as callLog {
     input:
+      file = getStderr.err
       exitCode = exitCode,
       n = n
   }
@@ -25,17 +27,23 @@ workflow empty {
   }
 }
 
+task getStderr {
+  output {
+    File err = stderr()
+  }
+}
+
 task log {
   input {
-    File fileOut = stderr()
+    File file = stderr()
     Int exitCode
     Int n
     Int mem = 1
     Int timeout = 1
   }
   command <<<
-  # Log n number of lines from fileOut (stderr)
-    tail -n ${n} ${fileOut} >&2
+  # Log n number of lines from file (stderr)
+    tail -n ${n} ${file} >&2
     exit ~{exitCode}
   >>>
   runtime {
@@ -46,7 +54,7 @@ task log {
     Array[String] lines = read_lines(stderr())
   }
   parameter_meta {
-    fileOut: "Stream from which lines will be logged"
+    file: "File from which lines will be logged"
     exitCode: "Integer used to fail as appropriate"
     n: "Number of lines to log from fileOut"
     mem: "Memory (in GB) to allocate to the job"
