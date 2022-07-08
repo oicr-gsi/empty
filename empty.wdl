@@ -10,11 +10,14 @@ workflow empty {
     n: "Number of lines to log"
   }
   call getStderr
-  call log as callLog {
+  call log as getLog {
     input:
       file = getStderr.err,
       exitCode = exitCode,
       n = n
+  }
+  output {
+    File out = getLog.stderr()
   }
   meta {
     author: "Jenniffer Meng"
