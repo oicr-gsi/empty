@@ -43,7 +43,7 @@ task log {
   }
   command <<<
     # Log n number of lines from file (stderr)
-    tail -n ${n} ${file} >&2
+    tail -n ~{n} ~{file} >&2
     exit ~{exitCode}
   >>>
   runtime {
