@@ -28,6 +28,7 @@ workflow empty {
 }
 
 task getStderr {
+  command <<< >>>
   output {
     File err = stderr()
   }
