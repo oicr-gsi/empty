@@ -17,7 +17,7 @@ workflow empty {
       n = n
   }
   output {
-    File out = getLog.stderr()
+    File out = getLog.lines
   }
   meta {
     author: "Jenniffer Meng"
@@ -51,7 +51,7 @@ task log {
     timeout: "~{timeout}"
   }
   output {
-    Array[String] lines = read_lines(stderr())
+    File lines = stderr()
   }
   parameter_meta {
     file: "File from which lines will be logged"
