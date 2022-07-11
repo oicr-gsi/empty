@@ -12,7 +12,7 @@ workflow empty {
   call getStderr
   call log as getLog {
     input:
-      file = stderr(),
+      file = getStderr.err
       exitCode = exitCode,
       n = n
   }
@@ -43,7 +43,7 @@ task log {
   }
   command <<<
     # Log n number of lines from file (stderr)
-    tail -n ~{n} ~{file} >&2
+    tail -n ~{n} ~{file}
     exit ~{exitCode}
   >>>
   runtime {
@@ -51,7 +51,7 @@ task log {
     timeout: "~{timeout}"
   }
   output {
-    File lines = stderr()
+    File lines = stdout()
   }
   parameter_meta {
     file: "File from which lines will be logged"
