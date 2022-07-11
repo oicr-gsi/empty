@@ -12,7 +12,7 @@ workflow empty {
   call getStderr
   call log as getLog {
     input:
-      file = getStderr.err
+      file = getStderr.err,
       exitCode = exitCode,
       n = n
   }
