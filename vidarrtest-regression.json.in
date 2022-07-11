@@ -1,8 +1,16 @@
 [
   {
-    "arguments": {},
+    "arguments": {
+      "empty.exitCode": null,
+      "empty.n": null,
+      "empty.getLog.mem": null,
+      "empty.getLog.timeout": null
+    },
     "description": "Log the default number of lines (10) and default exit (code=0)",
-    "engineArguments": {},
+    "engineArguments": {
+      "read_from_cache": null,
+      "write_to_cache": null
+    },
     "id": "TEST_EMPTY",
     "metadata": {
       "empty.out": {
