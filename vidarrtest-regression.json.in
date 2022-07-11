@@ -8,8 +8,8 @@
     },
     "description": "Log the default number of lines (10) and default exit (code=0)",
     "engineArguments": {
-      "read_from_cache": null,
-      "write_to_cache": null
+      "read_from_cache": false,
+      "write_to_cache": false
     },
     "id": "TEST_EMPTY",
     "metadata": {
