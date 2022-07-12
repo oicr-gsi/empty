@@ -9,13 +9,13 @@ workflow empty {
     exitCode: "Exit code"
     n: "Number of lines to log"
   }
-  call log as getLog {
+  call log {
     input:
       exitCode = exitCode,
       n = n
   }
   output {
-    File err = getLog.err
+    File err = log.err
   }
   meta {
     author: "Jenniffer Meng"

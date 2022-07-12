@@ -1,12 +1,12 @@
 [
   {
     "arguments": {
-      "empty.exitCode": null,
-      "empty.n": null,
-      "empty.getLog.mem": null,
-      "empty.getLog.timeout": null
+      "empty.exitCode": 0,
+      "empty.n": 10,
+      "empty.log.mem": 1,
+      "empty.log.timeout": 1
     },
-    "description": "Log the default number of lines (10) and default exit (code=0)",
+    "description": "Log the default number of lines (10) to stderr and default exit (code=0)",
     "engineArguments": {
       "read_from_cache": false,
       "write_to_cache": false
