@@ -3,6 +3,8 @@
     "arguments": {
       "empty.exitCode": null,
       "empty.n": null,
+      "empty.log.exitCode": null,
+      "empty.log.n": null,
       "empty.log.mem": null,
       "empty.log.timeout": null
     },

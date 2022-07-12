@@ -7,7 +7,7 @@ workflow empty {
   }
   parameter_meta {
     exitCode: "Exit code"
-    n: "Number of lines to log"
+    n: "Number of lines to log to stderr"
   }
   call log {
     input:
