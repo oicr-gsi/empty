@@ -43,6 +43,7 @@ task log {
   }
   command <<<
     # Log n number of lines from file (stderr)
+    set -euo pipefail
     tail -n ~{n} ~{file}
     exit ~{exitCode}
   >>>
