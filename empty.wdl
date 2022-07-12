@@ -34,7 +34,7 @@ task log {
   command <<<
     set -euo pipefail
     for (( i = 1; i < ~{n}; i++ )) do
-      echo "This is a place holder stderr line ~{i}" >&2
+      echo "This is a place holder stderr line ${i}" >&2
     done
     exit ~{exitCode}
   >>>
