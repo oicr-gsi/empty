@@ -19,7 +19,7 @@
             "outputDirectory": "@SCRATCH@/@DATE@_Workflow_empty_TEST_EMPTY_@JENKINSID@"
           }
         ],
-        "type": "ALL"
+        "type": "EXTERNAL"
       }
     },
     "validators": [
