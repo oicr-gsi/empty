@@ -9,15 +9,13 @@ workflow empty {
     exitCode: "Exit code"
     n: "Number of lines to log"
   }
-  call getStderr
   call log as getLog {
     input:
-      file = getStderr.err,
       exitCode = exitCode,
       n = n
   }
   output {
-    File out = getLog.lines
+    File err = getLog.err
   }
   meta {
     author: "Jenniffer Meng"
@@ -26,25 +24,18 @@ workflow empty {
   }
 }
 
-task getStderr {
-  command <<< >>>
-  output {
-    File err = stderr()
-  }
-}
-
 task log {
   input {
-    File file
     Int exitCode
     Int n
     Int mem = 1
     Int timeout = 1
   }
   command <<<
-    # Log n number of lines from file (stderr)
     set -euo pipefail
-    tail -n ~{n} ~{file}
+    for (( i = 1; i < ~{n}; i++ )) ; do
+      echo 'This is a place holder stderr line ${i}' >&2
+    done
     exit ~{exitCode}
   >>>
   runtime {
@@ -52,19 +43,18 @@ task log {
     timeout: "~{timeout}"
   }
   output {
-    File lines = stdout()
+    File err = stderr()
   }
   parameter_meta {
-    file: "File from which lines will be logged"
     exitCode: "Integer used to fail as appropriate"
-    n: "Number of lines to log from fileOut"
+    n: "Number of lines to log to stderr"
     mem: "Memory (in GB) to allocate to the job"
     modules: "Environment module name and version to load (space separated) before command execution"
     timeout: "Maximum amount of time (in hours) the task can run for"
   }
   meta {
     output_meta: {
-      lines: "Lines tailed from produced stderr file"
+      err: "stderr lines produced"
     }
   }
 }
