@@ -1,10 +1,10 @@
 [
   {
     "arguments": {
-      "empty.exitCode": 0,
-      "empty.n": 10,
-      "empty.log.mem": 1,
-      "empty.log.timeout": 1
+      "empty.exitCode": null,
+      "empty.n": null,
+      "empty.log.mem": null,
+      "empty.log.timeout": null
     },
     "description": "Log the default number of lines (10) to stderr and default exit (code=0)",
     "engineArguments": {
