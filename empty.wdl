@@ -51,7 +51,6 @@ task log {
     exitCode: "Integer used to fail as appropriate"
     n: "Number of lines to log to stderr"
     mem: "Memory (in GB) to allocate to the job"
-    modules: "Environment module name and version to load (space separated) before command execution"
     timeout: "Maximum amount of time (in hours) the task can run for"
   }
   meta {
