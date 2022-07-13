@@ -5,6 +5,5 @@ set -o pipefail
 
 # Loop through all files in directory and output the number of lines they have
 for f in * ; do
-  echo ${f}
   wc -l ${f} | md5sum
 done
