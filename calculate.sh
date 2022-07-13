@@ -3,7 +3,8 @@ set -o nounset
 set -o errexit
 set -o pipefail
 
-# Get the number of lines from the produced output files
-for f in ${1} ; do
+# Loop through all files in directory and output the number of lines they have
+for f in * ; do
+  echo ${f}
   wc -l ${f} | md5sum
 done
