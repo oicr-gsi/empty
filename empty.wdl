@@ -12,8 +12,7 @@ workflow empty {
   call log {
     input:
       exitCode = exitCode,
-      n = n,
-      outputPrefix = outputFileNamePrefix
+      n = n
   }
   output {
     File err = log.err
