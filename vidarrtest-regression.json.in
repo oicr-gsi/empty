@@ -9,7 +9,7 @@
       "empty.log.timeout": null,
       "empty.dummyInput": {
         "contents": {
-          "configuration": "/.mounts/labs/gsi/testdata/empty/input_data/DUMMY_INPUT.gz",
+          "configuration": "/.mounts/labs/gsi/testdata/empty/input_data/DUMMY_INPUT.txt",
           "externalIds": [
             {
               "id": "TEST",
