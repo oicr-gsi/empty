@@ -2,6 +2,7 @@ version 1.0
 
 workflow empty {
   input {
+    File dummyInput
     Int exitCode = 0
     Int n = 10
   }

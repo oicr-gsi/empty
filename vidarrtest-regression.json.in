@@ -6,7 +6,19 @@
       "empty.log.exitCode": null,
       "empty.log.n": null,
       "empty.log.mem": null,
-      "empty.log.timeout": null
+      "empty.log.timeout": null,
+      "empty.dummyInput": {
+        "contents": {
+          "configuration": "/.mounts/labs/gsi/testdata/empty/input_data/DUMMY_INPUT.gz",
+          "externalIds": [
+            {
+              "id": "TEST",
+              "provider": "TEST"
+            }
+          ]
+        },
+        "type": "EXTERNAL"
+      }
     },
     "description": "Log the default number of lines (10) to stderr and default exit (code=0)",
     "engineArguments": {
