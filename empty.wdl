@@ -12,7 +12,8 @@ workflow empty {
   call log {
     input:
       exitCode = exitCode,
-      n = n
+      n = n,
+      outputPrefix = outputFileNamePrefix
   }
   output {
     File err = log.err
@@ -33,7 +34,8 @@ task log {
   }
   command <<<
     set -euo pipefail
-    for (( i = 1; i < ~{n}; i++ )) do
+    # Output n lines to stderr
+    for (( i = 1; i <= ~{n}; i++ )) ; do
       echo "This is a place holder stderr line ${i}" 1>&2
     done
     exit ~{exitCode}

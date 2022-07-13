@@ -3,5 +3,7 @@ set -o nounset
 set -o errexit
 set -o pipefail
 
-# exit immediately
-echo 1
+# Get the number of lines from the produced output files
+for f in ${1} ; do
+  wc -l ${f} | md5sum
+done
