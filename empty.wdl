@@ -3,7 +3,7 @@ version 1.0
 workflow empty {
   input {
     File dummyInput
-    Int exitCode = 0
+    Int exitCode
     Int n = 10
   }
   parameter_meta {
