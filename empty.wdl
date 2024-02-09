@@ -7,6 +7,7 @@ workflow empty {
     Int n = 10
   }
   parameter_meta {
+    dummyInput: "File from Vidarr"
     exitCode: "Exit code"
     n: "Number of lines to log to stderr"
   }
@@ -16,12 +17,14 @@ workflow empty {
       n = n
   }
   output {
-    File err = log.err
+    File stdout = log.stdout
+    File stderr = log.stderr
   }
   meta {
     author: "Jenniffer Meng"
     email: "jenniffer.meng@oicr.on.ca"
     description: "Workflow for testing infrastructure"
+    dependencies: []
   }
 }
 
@@ -36,6 +39,7 @@ task log {
     set -euo pipefail
     # Output n lines to stderr
     for (( i = 1; i <= ~{n}; i++ )) ; do
+      echo "This is a place holder stdout line ${i}"
       echo "This is a place holder stderr line ${i}" 1>&2
     done
     exit ~{exitCode}
@@ -45,7 +49,8 @@ task log {
     timeout: "~{timeout}"
   }
   output {
-    File err = stderr()
+    File stdout = stdout()
+    File stderr = stderr()
   }
   parameter_meta {
     exitCode: "Integer used to fail as appropriate"
@@ -55,7 +60,8 @@ task log {
   }
   meta {
     output_meta: {
-      err: "stderr lines produced"
+      stdout: "stdout lines produced",
+      stderr: "stderr lines produced"
     }
   }
 }
