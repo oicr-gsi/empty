@@ -26,7 +26,7 @@
       "read_from_cache": false,
       "write_to_cache": false
     },
-    "id": "TEST_EMPTY",
+    "id": "TEST_EMPTY1",
     "metadata": {
       "empty.stdout": {
         "contents": [
@@ -39,7 +39,7 @@
       "empty.stderr": {
         "contents": [
           {
-            "outputDirectory": "@SCRATCH@/@DATE@_Workflow_empty_TEST_EMPTY_@JENKINSID@"
+            "outputDirectory": "@SCRATCH@/@DATE@_Workflow_empty_TEST_EMPTY1_@JENKINSID@"
           }
         ],
         "type": "ALL"
@@ -49,7 +49,53 @@
       {
         "metrics_calculate": "@CHECKOUT@/calculate.sh",
         "metrics_compare": "@CHECKOUT@/compare.sh",
-        "output_metrics": "/.mounts/labs/gsi/testdata/empty/output_metrics/TEST_EMPTY.metrics",
+        "output_metrics": "/.mounts/labs/gsi/testdata/empty/output_metrics/TEST_EMPTY1.metrics",
+        "type": "script"
+      }
+    ]
+  },
+  {
+    "arguments": {
+      "empty.exitCode": null,
+      "empty.n": null,
+      "empty.log.exitCode": null,
+      "empty.log.n": null,
+      "empty.log.mem": null,
+      "empty.log.timeout": null,
+      "empty.dummyInput": {
+        "contents": {
+          "configuration": "/.mounts/labs/gsi/testdata/empty/input_data/DUMMY_INPUT.txt",
+          "externalIds": [
+            {
+              "id": "TEST",
+              "provider": "TEST"
+            }
+          ]
+        },
+        "type": "EXTERNAL"
+      }
+    },
+    "description": "Log the default number of lines (10) to stderr and default exit (code=0)",
+    "engineArguments": {
+      "read_from_cache": false,
+      "write_to_cache": false
+    },
+    "id": "TEST_EMPTY2",
+    "metadata": {
+      "empty.err": {
+        "contents": [
+          {
+            "outputDirectory": "@SCRATCH@/@DATE@_Workflow_empty_TEST_EMPTY2_@JENKINSID@"
+          }
+        ],
+        "type": "ALL"
+      }
+    },
+    "validators": [
+      {
+        "metrics_calculate": "@CHECKOUT@/calculate.sh",
+        "metrics_compare": "@CHECKOUT@/compare.sh",
+        "output_metrics": "/.mounts/labs/gsi/testdata/empty/output_metrics/TEST_EMPTY2.metrics",
         "type": "script"
       }
     ]
