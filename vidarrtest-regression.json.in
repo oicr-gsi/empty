@@ -27,7 +27,15 @@
     },
     "id": "TEST_EMPTY",
     "metadata": {
-      "empty.err": {
+      "empty.stdout": {
+        "contents": [
+          {
+            "outputDirectory": "@SCRATCH@/@DATE@_Workflow_empty_TEST_EMPTY_@JENKINSID@"
+          }
+        ],
+        "type": "ALL"
+      },
+      "empty.stderr": {
         "contents": [
           {
             "outputDirectory": "@SCRATCH@/@DATE@_Workflow_empty_TEST_EMPTY_@JENKINSID@"
