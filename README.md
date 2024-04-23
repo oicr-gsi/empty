@@ -39,10 +39,10 @@ Parameter|Value|Default|Description
 
 ### Outputs
 
-Output | Type | Description
----|---|---
-`stdout`|File|stdout lines produced
-`stderr`|File|stderr lines produced
+Output | Type | Description | Label
+---|---|---|---
+`stdout`|Pair[File,Map[String,String]]|{'description': 'stdout lines produced', 'vidarr_label': 'stdout'}|[('vidarr_label', 'stdout')]
+`stderr`|Pair[File,Map[String,String]]|{'description': 'stderr lines produced', 'vidarr_label': 'stderr'}|[('vidarr_label', 'stderr')]
 
 
 ## Commands
