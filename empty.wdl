@@ -26,10 +26,14 @@ workflow empty {
     description: "Workflow for testing infrastructure"
     dependencies: []
     output_meta: {
-      stdout: {description: "stdout lines produced"
-               vidarr_label: "stdout"},
-      stderr: {description: "stderr lines produced"
-               vidarr_label: "stderr"}
+      stdout: {
+                description: "stdout lines produced",
+                vidarr_label: "stdout"
+              },
+      stderr: {
+                description: "stderr lines produced",
+                vidarr_label: "stderr"
+              }
     }
   }
 }
