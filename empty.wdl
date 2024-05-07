@@ -43,6 +43,7 @@ task log {
     Int exitCode
     Int n
     Int mem = 1
+    Int runtime_seconds = 60
     Int timeout = 1
   }
   command <<<
@@ -52,6 +53,9 @@ task log {
       echo "This is a place holder stdout line ${i}"
       echo "This is a place holder stderr line ${i}" 1>&2
     done
+    echo "Sleeping for ~{runtime_seconds}s"
+    sleep ~{runtime_seconds}
+    echo "Sleeping complete"
     exit ~{exitCode}
   >>>
   runtime {
@@ -66,6 +70,7 @@ task log {
     exitCode: "Integer used to fail as appropriate"
     n: "Number of lines to log to stderr"
     mem: "Memory (in GB) to allocate to the job"
+    runtime_seconds: "The amount of time (in seconds) to simulate processing/sleep for"
     timeout: "Maximum amount of time (in hours) the task can run for"
   }
   meta {
@@ -75,4 +80,3 @@ task log {
     }
   }
 }
-

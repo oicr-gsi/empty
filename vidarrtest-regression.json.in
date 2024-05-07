@@ -6,6 +6,7 @@
       "empty.log.exitCode": null,
       "empty.log.n": null,
       "empty.log.mem": null,
+      "empty.log.runtime_seconds": null,
       "empty.log.timeout": null,
       "empty.dummyInput": {
         "contents": {
