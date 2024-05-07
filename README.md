@@ -34,6 +34,7 @@ Parameter|Value|Default|Description
 Parameter|Value|Default|Description
 ---|---|---|---
 `log.mem`|Int|1|Memory (in GB) to allocate to the job
+`log.runtime_seconds`|Int|60|The amount of time (in seconds) to simulate processing/sleep for
 `log.timeout`|Int|1|Maximum amount of time (in hours) the task can run for
 
 
