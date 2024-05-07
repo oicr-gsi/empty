@@ -53,9 +53,7 @@ task log {
       echo "This is a place holder stdout line ${i}"
       echo "This is a place holder stderr line ${i}" 1>&2
     done
-    echo "Sleeping for ~{runtime_seconds}s"
     sleep ~{runtime_seconds}
-    echo "Sleeping complete"
     exit ~{exitCode}
   >>>
   runtime {
