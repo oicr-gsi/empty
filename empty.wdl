@@ -7,7 +7,7 @@ workflow empty {
     Int n = 10
   }
   parameter_meta {
-    dummyInput: "File from Vidarr"
+    dummyInput: "Unused input file, strictly for Vidarr regression testing."
     exitCode: "Exit code"
     n: "Number of lines to log to stderr"
   }

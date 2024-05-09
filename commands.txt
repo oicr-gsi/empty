@@ -1,0 +1,18 @@
+## Commands
+This section lists command(s) run by "empty" workflow, a workflow used by GSI's infrastructure & Software Development team for testing.
+
+* Workflow "empty" does the following:
+** Prints to X lines to stdout and stderr.
+** Waits for Y seconds (to simulate long running tasks).
+** Exits/terminates with a user specified exit code.
+
+<<<
+    set -euo pipefail
+    # Output n lines to stderr
+    for (( i = 1; i <= ~{n}; i++ )) ; do
+      echo "This is a place holder stdout line ${i}"
+      echo "This is a place holder stderr line ${i}" 1>&2
+    done
+    sleep ~{runtime_seconds}
+    exit ~{exitCode}
+>>>
