@@ -20,7 +20,7 @@ java -jar cromwell.jar run empty.wdl --inputs inputs.json
 #### Required workflow parameters:
 Parameter|Value|Description
 ---|---|---
-`dummyInput`|File|File from Vidarr
+`dummyInput`|File|Unused input file, strictly for Vidarr regression testing.
 
 
 #### Optional workflow parameters:
@@ -47,11 +47,12 @@ Output | Type | Description | Labels
 
 
 ## Commands
- This section lists command(s) run by WORKFLOW workflow
+ This section lists command(s) run by "empty" workflow, a workflow used by GSI's infrastructure & Software Development team for testing.
  
- * Running WORKFLOW
- 
- === Description here ===.
+ * Workflow "empty" does the following:
+ ** Prints to X lines to stdout and stderr.
+ ** Waits for Y seconds (to simulate long running tasks).
+ ** Exits/terminates with a user specified exit code.
  
  <<<
      set -euo pipefail
@@ -60,8 +61,9 @@ Output | Type | Description | Labels
        echo "This is a place holder stdout line ${i}"
        echo "This is a place holder stderr line ${i}" 1>&2
      done
+     sleep ~{runtime_seconds}
      exit ~{exitCode}
-   >>>
+ >>>
  ## Support
 
 For support, please file an issue on the [Github project](https://github.com/oicr-gsi) or send an email to gsi@oicr.on.ca .
