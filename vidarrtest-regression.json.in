@@ -31,7 +31,7 @@
       "empty.stdout": {
         "contents": [
           {
-            "outputDirectory": "@SCRATCH@/@DATE@_Workflow_empty_TEST_EMPTY_@JENKINSID@"
+            "outputDirectory": "@SCRATCH@/@DATE@_Workflow_empty_TEST_EMPTY1_@JENKINSID@"
           }
         ],
         "type": "ALL"
@@ -82,6 +82,14 @@
     },
     "id": "TEST_EMPTY2",
     "metadata": {
+      "empty.stdout": {
+            "contents": [
+              {
+                "outputDirectory": "@SCRATCH@/@DATE@_Workflow_empty_TEST_EMPTY2_@JENKINSID@"
+              }
+            ],
+            "type": "ALL"
+          },
       "empty.err": {
         "contents": [
           {
