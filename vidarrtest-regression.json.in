@@ -61,6 +61,7 @@
       "empty.log.exitCode": null,
       "empty.log.n": null,
       "empty.log.mem": null,
+      "empty.log.runtime_seconds": null,
       "empty.log.timeout": null,
       "empty.dummyInput": {
         "contents": {
@@ -90,7 +91,7 @@
             ],
             "type": "ALL"
           },
-      "empty.err": {
+      "empty.stderr": {
         "contents": [
           {
             "outputDirectory": "@SCRATCH@/@DATE@_Workflow_empty_TEST_EMPTY2_@JENKINSID@"
