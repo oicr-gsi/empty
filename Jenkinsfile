@@ -8,7 +8,8 @@ pipeline {
         }
       }
       steps {
-        sh '/.mounts/labs/gsi/vidarr/jenkins-ci-wrapper test -t /.mounts/labs/gsi/vidarr/testing-config.json'
+        sh '/.mounts/labs/gsi/vidarr/jenkins-ci-wrapper_gsici test -t /
+        .mounts/labs/gsi/vidarr/testing-config.json'
       }
     }
     stage('Deploy') {
@@ -16,7 +17,8 @@ pipeline {
         buildingTag()
       }
       steps {
-        sh '/.mounts/labs/gsi/vidarr/jenkins-ci-wrapper deploy -v $TAG_NAME -t /.mounts/labs/gsi/vidarr/testing-config.json -U /.mounts/labs/gsi/vidarr/deploy-urls'
+        sh '/.mounts/labs/gsi/vidarr/jenkins-ci-wrapper_gsici deploy -v $TAG_NAME -t /
+        .mounts/labs/gsi/vidarr/testing-config.json -U /.mounts/labs/gsi/vidarr/deploy-urls'
       }
     }
   }
